@@ -8,7 +8,6 @@ const pasteleriaSchema=new Schema({
     sabor:String,
     kilos:Number,
     descripcion:String,
-    color:String,
     diseño:String,
     precioventa:Number
 },{
