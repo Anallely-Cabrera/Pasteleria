@@ -19,6 +19,11 @@ mongoose.connect("mongodb+srv://fortijc:0987CXZ-He@cluster0.knyyyxf.mongodb.net/
 .then(db=> console.log("Mongodb Connected"))
 .catch(err=>console.error(err));
 
+//Eliminar 
+app.delete("/eliminar/:cb",async(req,res)=>{
+    await Pasteleria.findOneAndDelete({clave:req.params.cb});
+    res.json('{"status":"Eliminado"}');
+});
 
 
 app.listen(app.get('port'),()=>{
