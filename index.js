@@ -26,6 +26,15 @@ app.delete("/eliminar/:cb",async(req,res)=>{
 });
 
 
+//insertar 
+app.post("/insertar",async(req,res)=>{
+    const pasteleriaInsertado=new Proveedor(req.body);
+    await pasteleriaInsertado.save();
+    res.redirect('/');
+});
+
+
+
 app.listen(app.get('port'),()=>{
     console.log('servidor escuchando en el puerto 3600');
 });
