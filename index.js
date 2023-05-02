@@ -19,7 +19,6 @@ mongoose.connect("mongodb+srv://fortijc:0987CXZ-He@cluster0.knyyyxf.mongodb.net/
 .then(db=> console.log("Mongodb Connected"))
 .catch(err=>console.error(err));
 
-<<<<<<< HEAD
 //consulta individual 
 app.get("/:cb",async(req,res)=>{
     const pasteleria=await Pasteleria.findOne({codigobarras:req.params.cb});
@@ -30,7 +29,6 @@ app.post("/actualizar/:cb",async(req,res)=>{
     await Pasteleria.findOneAndUpdate({codigobarras:req.params.cb},req.body);
     res.redirect("/");
 })
-=======
 //muestra y pinta los datos del index
 app.get("/",async(req,res)=>{
     const pasteles=await Pastel.find();
@@ -50,7 +48,6 @@ app.post("/insertar",async(req,res)=>{
     res.redirect('/');
 });
 
->>>>>>> 68b48f87d9d2a4cce7315d870138e4d4e87b0da6
 
 
 app.listen(app.get('port'),()=>{
