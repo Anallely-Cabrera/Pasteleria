@@ -105,25 +105,29 @@
                                             <th>Kilos</th>
                                             <th>Descripcion</th>
                                             <th>Diseño</th>
-                                            <th colspan="2">Precio Venta</th>
+                                            <th>Precio de Venta</th>
+                                            <th colspan="2">operaciones</th>
                                         </thead>
                                     </tbody>
 
                                     <tr>
-                                        <%pastelerias.forEach(pasteleria=>{%>
+                                        <%pasteles.forEach(pasteles=>{%>
                                             <tr>
-                                                
-                                                <th><%=pasteleria.codigobarras%></th>
-                                                <th><%=pasteleria.sabor%></th>
-                                                <th><%=pasteleria.kilos%></th>
-                                                <th><%=pasteleria.descripcion%></th>
-                                                <th><%=pasteleria.diseño%></th>
-                                                <th><%=pasteleria.precioventa%></th>
+                                                <th><%=pasteles.codigobarras%></th>
+                                                <th><%=pasteles.sabor%></th>
+                                                <th><%=pasteles.kilos%></th>
+                                                <th><%=pasteles.descripcion%></th>
+                                                <th><%=pasteles.diseño%></th>
+                                                <th><%=pasteles.precioventa%></th>
                                                 <th>
+<<<<<<< HEAD
                                                     <a href="/<%=pasteleria.codigobarras%>" class="btn btn-warning"><i class="material-icons">edit</i></a>
+=======
+                                                    <a href="/editar/<%=pasteles.codigobarras%>" class="btn btn-warning"><i class="material-icons">edit</i></a>
+>>>>>>> 68b48f87d9d2a4cce7315d870138e4d4e87b0da6
                                                 </th>
                                                 <th>
-                                                    <a href="/eliminar/<%=pasteleria.codigobarras %>" class="btn btn-danger"><i class="material-icons">delete</i></a>
+                                                    <a href="/eliminar/<%=pasteles.codigobarras %>" class="btn btn-danger"><i class="material-icons">delete</i></a>
                                                 </th>
                                             </tr>
                                         <%})%>

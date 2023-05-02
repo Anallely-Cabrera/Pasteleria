@@ -1,5 +1,5 @@
 const {Schema,model}=require('mongoose');
-const pasteleriaSchema=new Schema({
+const pastelSchema=new Schema({
     codigobarras:{
         require:true,//se solicita y lo inserta si esta
         unique:true,// si se duplicaca tampoco se inserta
@@ -15,4 +15,4 @@ const pasteleriaSchema=new Schema({
     timestamps:true
 });
 
-module.exports=model('pasteleria',pasteleriaSchema);
+module.exports=model('pastel',pastelSchema);
