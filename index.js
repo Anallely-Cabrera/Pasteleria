@@ -29,7 +29,10 @@ app.post("/actualizar/:cb",async(req,res)=>{
     await Pastel.findOneAndUpdate({codigobarras:req.params.cb},req.body);
     res.redirect("/");
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5b414415725a8de8a62141dd054ca7aebb349751
 //muestra y pinta los datos del index
 app.get("/",async(req,res)=>{
     const pasteles=await Pastel.find();
@@ -49,6 +52,10 @@ app.post("/insertar",async(req,res)=>{
     res.redirect('/');
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b414415725a8de8a62141dd054ca7aebb349751
 
 app.listen(app.get('port'),()=>{
     console.log('servidor escuchando en el puerto 3600');
