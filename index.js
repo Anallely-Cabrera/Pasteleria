@@ -19,6 +19,16 @@ mongoose.connect("mongodb+srv://fortijc:0987CXZ-He@cluster0.knyyyxf.mongodb.net/
 .then(db=> console.log("Mongodb Connected"))
 .catch(err=>console.error(err));
 
+//consulta individual 
+app.get("/:cb",async(req,res)=>{
+    const pasteleria=await Pasteleria.findOne({codigobarras:req.params.cb});
+    res.render('editar',{pasteleria});
+})
+//actualizar
+app.post("/actualizar/:cb",async(req,res)=>{
+    await Pasteleria.findOneAndUpdate({codigobarras:req.params.cb},req.body);
+    res.redirect("/");
+})
 
 
 app.listen(app.get('port'),()=>{
