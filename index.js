@@ -1,7 +1,7 @@
 const express=require('express');
 const morgan=require('morgan');
 const mongoose=require('mongoose');
-const Pasteleria=require('./Pasteleria');
+const Pastel = require('./Pastel');
 const app=express();
 
 //Settings 
@@ -19,12 +19,17 @@ mongoose.connect("mongodb+srv://fortijc:0987CXZ-He@cluster0.knyyyxf.mongodb.net/
 .then(db=> console.log("Mongodb Connected"))
 .catch(err=>console.error(err));
 
-//Eliminar 
-app.delete("/eliminar/:cb",async(req,res)=>{
-    await Pasteleria.findOneAndDelete({clave:req.params.cb});
-    res.json('{"status":"Eliminado"}');
+//muestra y pinta los datos del index
+app.get("/",async(req,res)=>{
+    const pasteles=await Pastel.find();
+    res.render('index',{pasteles});
 });
 
+//Eliminar 
+app.get("/eliminar/:cb",async(req,res)=>{
+    await Pastel.findOneAndDelete({codigobarras:req.params.cb});
+    res.redirect("/");
+});
 
 app.listen(app.get('port'),()=>{
     console.log('servidor escuchando en el puerto 3600');
