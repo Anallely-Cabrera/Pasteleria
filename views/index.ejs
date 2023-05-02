@@ -79,13 +79,9 @@
                                             <input type="number" id="precioventa" class="form-control" name="precioventa">                            
                                         </div>                      
                                     </div>
-                                    <div class="row" >
+                                    <div class="row">
                                         <div class="col-lg-3">
-                                            <button class="btn btn-primary" >
-                                                <!-- <i class="btn btn-primary">Guardar</i> -->
-                                                Guardar
-                                            </button>
-                                            <!-- <a href="#"  >Guardar</a> -->
+                                          <button class="btn btn-primary">Guardar</button>
                                         </div>
                                     </div> 
                             </form>
@@ -111,22 +107,24 @@
                                     </tbody>
 
                                     <tr>
-                                        <%pasteles.forEach(pastel=>{%>
+                                        <%pasteles.forEach(pasteles=>{%>
                                             <tr>
-                                                <th><%=pastel.codigobarras%></th>
-                                                <th><%=pastel.sabor%></th>
-                                                <th><%=pastel.kilos%></th>
-                                                <th><%=pastel.descripcion%></th>
-                                                <th><%=pastel.diseño%></th>
-                                                <th><%=pastel.precioventa%></th>
-                                                <th>
-                                                    <a href="/<%=pasteleria.codigobarras%>" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                    <a href="/editar/<%=pasteles.codigobarras%>" class="btn btn-warning"><i class="material-icons">edit</i></a>
-
-                                                </th>
-                                                <th>
-                                                    <a href="/eliminar/<%=pasteles.codigobarras %>" class="btn btn-danger"><i class="material-icons">delete</i></a>
-                                                </th>
+                                                <td><%=pasteles.codigobarras%></td>
+                                                <td><%=pasteles.sabor%></td>
+                                                <td><%=pasteles.kilos%></td>
+                                                <td><%=pasteles.descripcion%></td>
+                                                <td><%=pasteles.diseño%></td>
+                                                <td><%=pasteles.precioventa%></td>
+                                                <td>
+                                                    <a href="/<%=pasteles.codigobarras %>" class="btn btn-warning">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/eliminar/<%=pasteles.codigobarras %> " class="btn btn-danger">
+                                                        <i class="material-icons">delete</i>
+                                                    </a>
+                                                </td>  
                                             </tr>
                                         <%})%>
                                     </tr>

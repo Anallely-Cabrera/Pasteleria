@@ -8,7 +8,6 @@ const app=express();
 app.set('port',process.env.PORT||3600);
 app.set('view engine', 'ejs');
 
-
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json()); 
@@ -21,18 +20,14 @@ mongoose.connect("mongodb+srv://fortijc:0987CXZ-He@cluster0.knyyyxf.mongodb.net/
 
 //consulta individual 
 app.get("/:cb",async(req,res)=>{
-    const pastel=await Pastel.findOne({codigobarras:req.params.cb});
-    res.render('editar',{pastel});
+    const pasteles=await Pastel.findOne({codigobarras:req.params.cb});
+    res.render('editar',{pasteles});
 })
 //actualizar
 app.post("/actualizar/:cb",async(req,res)=>{
     await Pastel.findOneAndUpdate({codigobarras:req.params.cb},req.body);
     res.redirect("/");
 })
-<<<<<<< HEAD
-
-=======
->>>>>>> 5b414415725a8de8a62141dd054ca7aebb349751
 //muestra y pinta los datos del index
 app.get("/",async(req,res)=>{
     const pasteles=await Pastel.find();
@@ -47,15 +42,10 @@ app.get("/eliminar/:cb",async(req,res)=>{
 
 //insertar 
 app.post("/insertar",async(req,res)=>{
-    const pasteleriaInsertado=new Pastel(req.body);
-    await pasteleriaInsertado.save();
+    const pastelesInsertado=new Pastel(req.body);
+    await pastelesInsertado.save();
     res.redirect('/');
 });
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b414415725a8de8a62141dd054ca7aebb349751
 
 app.listen(app.get('port'),()=>{
     console.log('servidor escuchando en el puerto 3600');
