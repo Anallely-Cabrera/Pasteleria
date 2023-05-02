@@ -28,7 +28,7 @@ app.get("/",async(req,res)=>{
 //Eliminar 
 app.get("/eliminar/:cb",async(req,res)=>{
     await Pastel.findOneAndDelete({codigobarras:req.params.cb});
-    res.redirect("/");
+    res.redirect("/"); 
 });
 
 app.listen(app.get('port'),()=>{
