@@ -33,7 +33,7 @@ app.get("/eliminar/:cb",async(req,res)=>{
 
 //insertar 
 app.post("/insertar",async(req,res)=>{
-    const pasteleriaInsertado=new Proveedor(req.body);
+    const pasteleriaInsertado=new Pastel(req.body);
     await pasteleriaInsertado.save();
     res.redirect('/');
 });
